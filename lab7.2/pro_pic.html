@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 6</title>
+    <script>
+        function validateForm() {
+            let userId = document.getElementById("name").value.trim();
+            let picture = document.getElementById("picture").value.trim();
+
+            // Rule i: UserId cannot be empty and has to be a positive number
+            if (userId === "" || isNaN(userId) || parseInt(userId) <= 0) {
+                alert("User ID must be a non-empty positive number");
+                return false;
+            }
+
+            // Rule ii: Picture cannot be empty
+            if (picture === "") {
+                alert("Please select a picture");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body> 
+    <form enctype="multipart/form-data" onsubmit="return validateForm()">
+        <fieldset>
+            <legend><h1>Profile picture</h1></legend>
+            User ID: <input type="text" id="name" name="name"><br>
+            Picture: <input type="file" id="picture" name="picture"><br> 
+        </fieldset><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Page 3</title>
+    <script>
+        function validateForm() {
+            let maleChecked = document.getElementById("male").checked;
+            let femaleChecked = document.getElementById("female").checked;
+            let otherChecked = document.getElementById("other").checked;
+
+            // Rule i: At least one of them has to be selected
+            if (!maleChecked && !femaleChecked && !otherChecked) {
+                alert("Please select a gender");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body> 
+    <form onsubmit="return validateForm()">
+        <fieldset> 
+            <legend>Gender</legend>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label>
+        </fieldset><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
